@@ -3,10 +3,11 @@ import React,{useState} from 'react';
 import './ExpensesFilter.css'
 
 const ExpensesFilter = (props) =>{
-    const [selectedDate,setSelectedDate] = useState('');
+    const [selectedDate,setSelectedDate] = useState('2021');
 
     const selectedDateHandler = (event) =>{
         setSelectedDate(event.target.value);
+        props.onSaveExpeseYear(event.target.value);
     };
 
     return(
@@ -19,15 +20,6 @@ const ExpensesFilter = (props) =>{
                     <option value='2020'>2020</option>
                     <option value='2019'>2019</option>
                 </select>
-            </div>
-            <div className='expenses-filter__list'>
-                <ul>
-                    {props.items.filter(item => (new Date(item.date).getFullYear()) == selectedDate).map(filteredItem => (
-                        <li>
-                        {filteredItem.title}
-                        </li>
-                    ))}
-                </ul>
             </div>
         </div>
     );

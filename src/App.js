@@ -34,10 +34,18 @@ const App = () => {
     });
   };
 
+  const filterDateYear = (filterYear) =>{
+    console.log(filterYear);
+    // {props.items.filter(item => (new Date(item.date).getFullYear()) == selectedDate).map(filteredItem => (
+
+    // ))}
+    const expenses = expenses.filter(item => (new Date(item.date).getFullYear()) == filterYear);
+  };
+
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Expenses onSaveFilter={filterDateYear} items={expenses} />
     </div>
   );
 }
