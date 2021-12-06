@@ -39,7 +39,7 @@ const App = () => {
     // {props.items.filter(item => (new Date(item.date).getFullYear()) == selectedDate).map(filteredItem => (
 
     // ))}
-    const expenses = expenses.filter(item => (new Date(item.date).getFullYear()) == filterYear);
+    // const expenses = expenses.filter(item => (new Date(item.date).getFullYear()) == filterYear);
   };
 
   return (
