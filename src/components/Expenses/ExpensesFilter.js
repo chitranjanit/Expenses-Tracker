@@ -22,11 +22,11 @@ const ExpensesFilter = (props) =>{
             </div>
             <div className='expenses-filter__list'>
                 <ul>
-                {props.items.filter(item => (new Date(item.date).getFullYear()) == selectedDate).map(filteredItem => (
-                    <li>
-                    {filteredItem.title}
-                    </li>
-                ))}
+                    {props.items.filter(item => (new Date(item.date).getFullYear()) == selectedDate).map(filteredItem => (
+                        <li>
+                        {filteredItem.title}
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
